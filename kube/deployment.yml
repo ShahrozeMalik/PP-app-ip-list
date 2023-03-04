@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: app-ns
+spec:
+  selector:
+    matchLabels:
+      app: inventory-app
+      tier: backend
+      track: stable
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 50%
+  template:
+    metadata:
+      labels:
+        app: inventory-app
+        tier: backend
+        track: stable
+    spec:
+      containers:
+      - name: inventory-app-api
+        image: "nginx"
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "200Mi"
+            cpu: "100m"
+          limits:
+            memory: "400Mi"
+            cpu: "300m"
+        ports:
+        - name: http
+          containerPort: 3000

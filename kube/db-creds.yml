@@ -1,0 +1,10 @@
+apiVersion: v1
+data:
+  host: 123
+  password: 123
+  username: 123
+kind: Secret
+metadata:
+  name: db-creds
+  namespace: app-ns
+type: Opaque
