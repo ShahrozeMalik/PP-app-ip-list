@@ -13,7 +13,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: host.apiinventorylist.com
+  - host: host.ipinventorylist.com
     http:
       paths:
       - path: /

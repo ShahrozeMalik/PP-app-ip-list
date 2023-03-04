@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: inventory-app-api
-        image: "nginx"
+        image: "579130533728.dkr.ecr.us-east-1.amazonaws.com/eksrepo:prod"
         imagePullPolicy: Always
         resources:
           requests:
