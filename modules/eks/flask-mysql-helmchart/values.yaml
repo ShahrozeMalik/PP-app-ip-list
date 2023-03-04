@@ -1,0 +1,22 @@
+app:
+  name: flask
+  replicaCount: 2
+  image:
+    repository: vgeorgework/flaskapp
+    tag: latest
+  containerPort: 5000
+
+  service:
+    name: flask-service
+    type: NodePort
+    port: 80
+
+db:
+  serviceType: ExternalName
+  serviceName: mysql-service
+  endpoint: ~
+
+secrets:
+  username: bWFheg==
+  password: YWRtaW5AMTIz
+  database: bXlkYg==
